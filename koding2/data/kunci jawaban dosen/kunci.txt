@@ -1,0 +1,25 @@
+1.
+ a)sebuah chip yang berfungsi sebagai pengontrol rangkaian elektronik yang umumnya menyimpan program dan terdiri dari CPU, memori, I/O tertentu dan unit pendukung seperti analog to digital converter yang sudah terintegrasi di dalamnya. Berdasarkan nilai yang berada pada register program counter mikrokontroler mengambil data pada ROM dengan alamat sebagaimana yang tertera pada register program counter. Instruksi yang diambil tersebut diolah dan disajikan oleh mikrokontroler.
+
+b)
+-	sensor gerak, berfungsi sebagai device input yang menangkap pergerakan yang kemudian diubah menjadi suatu data inputan.
+-	sensor panas, berfungsi sebagai device input yang mendeteksi suhu dengan panas tertentu sebagai inputan datanya pada mikrokontroler.
+-	sensor suara, berfungsi sebagai device input yang mendeteksi frekuensi suara tertentu 
+-	Sensor api/asap, berfungsi sebagai device input yang mendeteksi kemunculan/percikan api atau asap sebagai inputan datanya pada mikrokontroler.
+2.
+a)	Perangkat mobile akan menjadi pusat kegiatan manusia karena sistem pembayaran tunai akan semakin ditinggalkan dan digantikan dengan sistem mobile payment, mobile banking, semakin banyak bermunculan game-game berbasis mobile, ataupun perangkat mobile digunakan sebagai alat yang dijadikan identitas diri sehingga tidak diperlukan kartu identitas.
+b)
+-	Menganalisis dan merancang aplikasi seperti apa yang ingin  dibuat, dan menentukan dimana atau sepreti apa aplikasi tersebut akan digunakan.
+-	Memahami dan menguasai bahasa pemrograman yang digunakan untuk membuat aplikasi berbasis mobile seperti Java, JavaScript, Swift, Kotlin, Objective L, C# dan C++.
+-	Memiliki perangkat yang memadai.
+-	Menentukan aplikasi akan bersifat native atau react native.
+-	Menggunakan text editor yang sesuai, contoh text editor : Android Studio, Macbook XCode.
+3.
+-	Analisis sistem : menganalisis dan mendefinisikan masalah dan kemungkinan solusinya untuk sistem informasi dan proses organisasi.
+-	Design sistem : merancang output, input, struktur file, program, perangkat keras dan lunak yang diperlukan untuk mendukung sistem informasi.
+-	Implementasi sistem : instalasi perangkat keras dan lunak lalu dilakukan pengujian terhadap sistem dan pelatihan kepada peamakai serta melakukan dokumentasi dan konversi.
+-	Operasi dan pemeliharaan : mendukung operasi sistem dan melakukan pembaruan dan perawatan pada sistem.
+4.
+Virtual reality adalah teknologi yang membuat pengguna dapat berinteraksi dengan suatu lingkungan yang disimulasikan komputer melalui berbagai panca indranya sehingga pengguna seolah merasakan dunia yang nyata baik secara fisik maupun psikologis.
+5.
+Interface eyang baik itu memiliki tampilan yang jelas, dan singkat, desain yang intuitif yang dapat dimengerti dengan mudah secara natural, responsif, menarik, efisien, konsisten dan mengunakan icon yang dapat mengartikan suatu fungsi hanya dengan melihat gambarnya.
