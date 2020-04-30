@@ -92,6 +92,7 @@ class AES:
         
     def train(self, kunci_jawaban, label):
         self.kata_unik = get_unique_words(kunci_jawaban)
+        self.kj = kunci_jawaban
         self.kunci_jawaban = kunci_jawaban
         # self.fitur_awal = get_unique_words(kunci_jawaban)
         
@@ -152,7 +153,10 @@ class AES:
             self.y= np.array(label)
         
     def predict(self, jawaban):
+        if type(jawaban) is not str:
+            jawaban = str(jawaban)
         jawaban = jawaban.lower()
+        jawaban = jawaban.replace("\t", " ").replace("\n", " ")
         self.jawaban = typo(jawaban, self.kata_unik, self.toleransi)
 
         if self.qe:

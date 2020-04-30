@@ -1,5 +1,8 @@
 import requests
 import json
+
+from nltk.tokenize import word_tokenize
+
 # from modulku import StemNstopW as stm
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -13,26 +16,36 @@ def get_data(name):
         return json.load(filename)
 
 dict_ = get_data('sinonim_kateglo.json')
+null = get_data('null.json')
 
 def find_sinonim_kata(cek):
+    dict_sinonim_kata = dict()
     try:
-        list_objek = requests.get('http://kateglo.com/api.php?format=json&phrase='+str(cek)).json()['kateglo']['relation']['s']
-        sinonim_list = list()
-        for _, i in list_objek.items():
-            try:
-                sinonim_list.append(i['related_phrase'])
-            except:
-                pass
-        dict_sinonim_kata = {cek:sinonim_list}
+        if cek not in null:
+            
+            list_objek = requests.get('http://kateglo.com/api.php?format=json&phrase='+str(cek)).json()['kateglo']['relation']['s']
+            sinonim_list = list()
+            for _, i in list_objek.items():
+                try:
+                    sinonim_list.append(i['related_phrase'])
+                except:
+                    pass
+            dict_sinonim_kata = {cek:sinonim_list}
+        else:
+            pass
     except:
         dict_sinonim_kata = {cek:[]}
     return dict_sinonim_kata
 
 def find_sinonim_kalimat(kalimat):
+    kalimat = word_tokenize(kalimat)
+    kalimat = list (set(kalimat))
     sinonim_list=list()
-    for i in kalimat.split():
+    for i in kalimat:
         if i not in dict_:
             sinonim_list.append(find_sinonim_kata(i))
+            null.append(i)
+    save(null, "null.json")
     return sinonim_list
 
 def reverser_all(X):
@@ -40,7 +53,10 @@ def reverser_all(X):
         for ix, j in i.items():
             for sinonim_ in j:
                 dict_.update({sinonim_:ix})
+
+    # null = list(set(null))
     save(dict_, "sinonim_kateglo.json")
+    # save(null, "null.json")
     return dict_
 
 class QE:
@@ -51,11 +67,11 @@ class QE:
         self.corpus = reverser_all(find_sinonim_kalimat(kunci_jawaban))
     #ds
         new_kalimat = list()
-        for kata in jawaban.split():
-            if kata in kunci_jawaban.split():
+        for kata in word_tokenize(jawaban):# jawaban.split():
+            if kata in word_tokenize(kunci_jawaban):#kunci_jawaban.split():
                 new_kalimat.append(kata)
             elif kata in self.corpus:
-                if self.corpus[kata] in kunci_jawaban.split():
+                if self.corpus[kata] in word_tokenize(kunci_jawaban):#kunci_jawaban.split():
                     new_kalimat.append(self.corpus[kata])
                 else:
                    new_kalimat.append(kata) 
